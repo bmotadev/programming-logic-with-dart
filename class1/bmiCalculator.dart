@@ -15,6 +15,11 @@ bmiCalculator() {
 
   var calcImc = peso / (altura * altura);
 
+  imprimirResultado(calcImc);
+  
+}
+
+imprimirResultado(calcImc) {
   print("================");
 
   if(calcImc < 18.5) {
