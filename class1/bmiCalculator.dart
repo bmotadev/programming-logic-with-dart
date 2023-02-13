@@ -1,6 +1,10 @@
 import 'dart:io';
 
 void main(List<String> args) {
+  bmiCalculator();
+}
+
+bmiCalculator() {
   print("Digite seu Peso:");
   var textPeso = stdin.readLineSync();
   var peso = int.parse(textPeso ?? '0');
