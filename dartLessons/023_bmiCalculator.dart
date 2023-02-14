@@ -3,7 +3,7 @@ import 'dart:io';
 void main(List<String> args) {
   bmiCalculator();
 }
-
+//Programa que calcula o IMC
 bmiCalculator() {
   print("Digite seu Peso:");
   String? textPeso = stdin.readLineSync();
@@ -18,10 +18,13 @@ bmiCalculator() {
   
 }
 
+//função que recebe o peso e a altura e retorna o imc
 double calculoDoImc(int peso, double altura){
   return peso / (altura * altura);
 }
 
+
+//imprime o resultado baseado no imc passado por parametro
 imprimirResultado(double valorDoImc) {
   print("================");
 
