@@ -6,31 +6,34 @@ void main(List<String> args) {
 
 bmiCalculator() {
   print("Digite seu Peso:");
-  var textPeso = stdin.readLineSync();
-  var peso = int.parse(textPeso ?? '0');
+  String? textPeso = stdin.readLineSync();
+  int peso = int.parse(textPeso ?? '0');
 
   print("Digite sua altura:");
-  var textAltura = stdin.readLineSync();
-  var altura = double.parse(textAltura ?? '0');
-
-  var calcImc = peso / (altura * altura);
-
-  imprimirResultado(calcImc);
+  String? textAltura = stdin.readLineSync();
+  double altura = double.parse(textAltura ?? '0');
+  
+  double valorDoImc = calculoDoImc(peso, altura);
+  imprimirResultado(valorDoImc);
   
 }
 
-imprimirResultado(calcImc) {
+double calculoDoImc(int peso, double altura){
+  return peso / (altura * altura);
+}
+
+imprimirResultado(double valorDoImc) {
   print("================");
 
-  if(calcImc < 18.5) {
+  if(valorDoImc < 18.5) {
     print("Abaixo do peso");
-  } else if(calcImc > 18.5 && calcImc < 24.9) {
+  } else if(valorDoImc > 18.5 && valorDoImc < 24.9) {
     print("Peso Normal");
-  } else if(calcImc > 25 && calcImc < 29.9) {
+  } else if(valorDoImc > 25 && valorDoImc < 29.9) {
     print("Sobrepeso");
-  } else if(calcImc > 30 && calcImc < 34.9) {
+  } else if(valorDoImc > 30 && valorDoImc < 34.9) {
     print("Obesidade Grau 1");
-  } else if(calcImc > 35 && calcImc < 39.9) {
+  } else if(valorDoImc > 35 && valorDoImc < 39.9) {
     print("Obesidade Grau 2");
   } else {
     print("Obesidade Grau 3");
